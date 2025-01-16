@@ -1,0 +1,126 @@
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .page-item {
+    margin: 0 5px;
+  }
+  
+  .page-link {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .page-link:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader {
+    position: relative;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: blue;
+    animation: spin 1s linear infinite;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 4px solid red;
+    border-top-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 4px solid green;
+    border-right-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* styles.css or App.css */
+
+/* Keyframes for sliding in */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animations */
+.slide-in-left {
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.5s ease-out forwards;
+}
+
+
+.disabled-button {
+  cursor: not-allowed; /* Shows the "not allowed" cursor */
+  opacity: 0.6; /* Makes the button look visually disabled */
+}
+
+.disabled-button:hover {
+  cursor: not-allowed; /* Ensures the cursor stays the same on hover */
+}
+
+
+@media (max-width: 299px) {
+  .logo {
+      display: none;
+  }
+}
+
+/* Ensure the logo is visible on screens 300px and larger */
+@media (min-width: 300px) {
+  .logo {
+      display: block;
+  }
+}
+
